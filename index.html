@@ -4,172 +4,380 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gopal Agarwal</title>
+  <meta name="description" content="Gopal Agarwal — PhD Student in Engineering Mechanics, Columbia University." />
+
   <style>
-    :root { --border:#eee; --text:#111; --muted:#555; --link:#0b5fff; }
-    body{font-family:Arial, sans-serif; max-width:980px; margin:40px auto; padding:0 16px; line-height:1.7; color:var(--text);}
-    a{color:var(--link); text-decoration:none;}
-    a:hover{text-decoration:underline;}
-    .top{display:flex; gap:18px; flex-wrap:wrap; align-items:flex-start;}
-    .card{border:1px solid var(--border); border-radius:14px; padding:22px; width:100%;}
-    h1{margin:0;}
-    .sub{color:var(--muted); margin-top:6px;}
-    .grid{display:grid; grid-template-columns: 1fr; gap:14px; margin-top:14px;}
-    @media (min-width: 900px){ .grid{grid-template-columns: 1.1fr 0.9fr;} }
-    hr{border:none; border-top:1px solid var(--border); margin:18px 0;}
-    .pill{display:inline-block; padding:6px 10px; border:1px solid var(--border); border-radius:999px; margin:6px 6px 0 0; font-size:14px;}
-    .small{font-size:14px; color:var(--muted);}
-    ul{margin-top:8px;}
-    .section-title{margin:0 0 8px 0;}
-    .item-title{margin:0;}
-    .item-meta{margin:2px 0 0 0; color:var(--muted); font-size:14px;}
-    .item-desc{margin:8px 0 0 0;}
-    .two-col{display:grid; grid-template-columns: 1fr; gap:10px;}
-    @media (min-width: 700px){ .two-col{grid-template-columns: 1fr 1fr;} }
-    .footer{margin-top:18px; color:var(--muted); font-size:13px;}
-    code{background:#f7f7f7; padding:2px 6px; border-radius:6px;}
+    :root{
+      --bg:#0b0f14;
+      --card:#0f1621;
+      --text:#e8eef6;
+      --muted:#a9b4c2;
+      --border:rgba(255,255,255,.10);
+      --accent:#7dd3fc;
+      --accent2:#a78bfa;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius:16px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f7f8fb;
+        --card:#ffffff;
+        --text:#0f172a;
+        --muted:#475569;
+        --border:rgba(2,6,23,.10);
+        --accent:#0b5fff;
+        --accent2:#7c3aed;
+        --shadow: 0 12px 28px rgba(2,6,23,.08);
+      }
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1000px 600px at 10% 10%, rgba(125,211,252,.18), transparent 60%),
+                  radial-gradient(900px 500px at 90% 20%, rgba(167,139,250,.18), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.65;
+    }
+
+    .wrap{max-width:1100px; margin:32px auto; padding:0 16px 64px;}
+    .nav{
+      position: sticky; top: 0;
+      backdrop-filter: blur(10px);
+      background: color-mix(in srgb, var(--bg) 80%, transparent);
+      border-bottom: 1px solid var(--border);
+      z-index: 20;
+    }
+    .nav-inner{max-width:1100px; margin:0 auto; padding:10px 16px; display:flex; gap:10px; align-items:center; justify-content:space-between;}
+    .brand{display:flex; gap:10px; align-items:center; min-width:180px;}
+    .dot{width:10px; height:10px; border-radius:999px; background: linear-gradient(135deg, var(--accent), var(--accent2)); box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);}
+    .brand b{letter-spacing:.2px}
+    .tabs{display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end}
+    .tab{
+      border:1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 70%, transparent);
+      color:var(--text);
+      padding:9px 12px;
+      border-radius:999px;
+      cursor:pointer;
+      font-size:14px;
+      transition:.2s transform, .2s background, .2s border-color;
+      user-select:none;
+    }
+    .tab:hover{transform: translateY(-1px);}
+    .tab.active{
+      background: linear-gradient(135deg,
+        color-mix(in srgb, var(--accent) 25%, var(--card)),
+        color-mix(in srgb, var(--accent2) 18%, var(--card)));
+      border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+    }
+
+    .grid{display:grid; gap:16px; grid-template-columns: 1fr;}
+    @media(min-width: 900px){ .grid{grid-template-columns: 1.05fr .95fr;} }
+
+    .card{
+      background: color-mix(in srgb, var(--card) 92%, transparent);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px;
+    }
+
+    h1{font-size:34px; margin:0 0 6px;}
+    h2{font-size:20px; margin:0 0 10px;}
+    h3{font-size:16px; margin:0 0 6px;}
+    p{margin:10px 0;}
+    .muted{color:var(--muted)}
+    .pill{
+      display:inline-block; padding:7px 10px; border-radius:999px;
+      border:1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 75%, transparent);
+      margin:6px 6px 0 0; font-size:13px;
+    }
+    .row{display:flex; gap:16px; align-items:flex-start; flex-wrap:wrap;}
+    .photo{
+      width:110px; height:110px; border-radius:22px;
+      object-fit:cover;
+      border:1px solid var(--border);
+      box-shadow: 0 12px 25px rgba(0,0,0,.18);
+      background: rgba(255,255,255,.04);
+    }
+    .links a{
+      color: var(--text);
+      text-decoration:none;
+      border-bottom:1px dashed color-mix(in srgb, var(--muted) 55%, transparent);
+    }
+    .links a:hover{border-bottom-color: var(--accent);}
+
+    .list{margin:8px 0 0; padding:0 0 0 18px;}
+    .list li{margin:6px 0}
+    .hr{height:1px; background: var(--border); margin:14px 0;}
+    .btn{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px; border-radius:12px;
+      border:1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 75%, transparent);
+      color:var(--text); text-decoration:none;
+      transition:.2s transform, .2s border-color;
+      font-size:14px;
+    }
+    .btn:hover{transform: translateY(-1px); border-color: color-mix(in srgb, var(--accent) 35%, var(--border));}
+    .section{display:none;}
+    .section.active{display:block;}
+    .pdf{
+      width:100%;
+      height:72vh;
+      border:1px solid var(--border);
+      border-radius: 14px;
+      overflow:hidden;
+      background: rgba(255,255,255,.03);
+    }
+    .footer{margin-top:22px; font-size:13px; color:var(--muted);}
+    .kpi{display:grid; grid-template-columns: repeat(2,1fr); gap:10px;}
+    @media(min-width: 700px){ .kpi{grid-template-columns: repeat(4,1fr);} }
+    .kpi .mini{padding:12px; border:1px solid var(--border); border-radius:14px; background: color-mix(in srgb, var(--card) 75%, transparent);}
+    .mini b{display:block; font-size:14px}
+    .mini span{display:block; font-size:13px; color:var(--muted); margin-top:2px}
   </style>
 </head>
+
 <body>
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="dot"></div>
+        <b>Gopal Agarwal</b>
+      </div>
 
-  <div class="top">
-    <div class="card">
-      <h1>Gopal Agarwal</h1>
-      <div class="sub">PhD Student, Engineering Mechanics — Columbia University (Expected Dec 2026)</div>
+      <div class="tabs">
+        <div class="tab active" data-target="home">Home</div>
+        <div class="tab" data-target="cv">CV</div>
+        <div class="tab" data-target="publications">Publications</div>
+        <div class="tab" data-target="talks">Talks</div>
+        <div class="tab" data-target="experience">Experience</div>
+      </div>
+    </div>
+  </div>
 
-      <p>
-        I work in computational mechanics and fracture mechanics with a focus on
-        topology optimization, finite element methods, and machine learning-driven modeling.
-      </p>
+  <div class="wrap">
 
-      <div class="two-col">
-        <div>
-          <h3 class="section-title">Contact</h3>
-          <ul>
-            <li>Phone: +1 (917) 609-1483</li>
-            <li>Email: <a href="mailto:ga2664@columbia.edu">ga2664@columbia.edu</a></li>
-            <li>Alternate: <a href="mailto:gopalagarwal1259@gmail.com">gopalagarwal1259@gmail.com</a></li>
+    <!-- HOME -->
+    <section id="home" class="section active">
+      <div class="grid">
+        <div class="card">
+          <div class="row">
+            <!-- Put your photo file at: assets/profile.jpg -->
+            <img class="photo" src="assets/profile.jpg" alt="Gopal Agarwal" />
+
+            <div style="flex:1; min-width:260px;">
+              <h1>Gopal Agarwal</h1>
+              <div class="muted">PhD Student in Engineering Mechanics — Columbia University (Expected Dec 2026)</div>
+
+              <p>
+                I work in computational mechanics and fracture mechanics with a focus on
+                topology optimization, finite element analysis, and machine learning-driven modeling.
+              </p>
+
+              <div class="links muted">
+                <b>Contact:</b>
+                <a href="mailto:ga2664@columbia.edu">ga2664@columbia.edu</a> ·
+                <a href="mailto:gopalagarwal1259@gmail.com">gopalagarwal1259@gmail.com</a> ·
+                <span class="muted">+1 (917) 609-1483</span>
+                <br/>
+                <b>Links:</b>
+                <!-- Replace # with your real URLs -->
+                <a href="#" target="_blank" rel="noreferrer">LinkedIn</a> ·
+                <a href="#" target="_blank" rel="noreferrer">Google Scholar</a> ·
+                <a href="#" target="_blank" rel="noreferrer">ResearchGate</a>
+              </div>
+
+              <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+                <a class="btn" href="#cv" data-jump="cv">View CV</a>
+                <a class="btn" href="#publications" data-jump="publications">Publications</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hr"></div>
+
+          <h2>Research Interests</h2>
+          <div>
+            <span class="pill">Topology Optimization</span>
+            <span class="pill">Finite Element Analysis</span>
+            <span class="pill">Machine Learning</span>
+            <span class="pill">Algorithms</span>
+            <span class="pill">Computational Algebra</span>
+            <span class="pill">Stochastic Analysis</span>
+          </div>
+
+          <div class="hr"></div>
+
+          <h2>Education</h2>
+          <ul class="list">
+            <li><b>Columbia University</b> — PhD, Engineering Mechanics (Expected Dec 2026) · Advisor: Prof. Haim Waisman · GPA 3.97/4.0</li>
+            <li><b>Columbia University</b> — M.Phil, Engineering Mechanics (Dec 2025) · Advisor: Prof. Haim Waisman · GPA 3.97/4.0</li>
+            <li><b>Leibniz Universität Hannover</b> — MSc, Computational Methods in Engineering (Sep 2023) · Grade 1.4/5.0</li>
+            <li><b>Jadavpur University</b> — B.E., Mechanical Engineering (Apr 2019) · Grade 8.52/10</li>
           </ul>
-          <p class="small">
-            Links:
-            <!-- Replace the # links with your actual URLs -->
-            <a href="#" target="_blank" rel="noreferrer">LinkedIn</a> ·
-            <a href="#" target="_blank" rel="noreferrer">Google Scholar</a> ·
-            <a href="#" target="_blank" rel="noreferrer">ResearchGate</a>
-          </p>
+
+          <div class="hr"></div>
+
+          <h2>Highlights</h2>
+          <div class="kpi">
+            <div class="mini"><b>Columbia GPA</b><span>3.97 / 4.0</span></div>
+            <div class="mini"><b>Focus</b><span>XFEM / Fracture</span></div>
+            <div class="mini"><b>Tools</b><span>Python, FEnics</span></div>
+            <div class="mini"><b>Awards</b><span>Calatrava Fellow</span></div>
+          </div>
+
+          <div class="footer">
+            Tip: If you don’t want your phone/personal email public, remove them from Home.
+          </div>
         </div>
 
-        <div>
-          <h3 class="section-title">Research Interests</h3>
-          <span class="pill">Topology Optimization</span>
-          <span class="pill">Finite Element Analysis</span>
-          <span class="pill">Machine Learning</span>
-          <span class="pill">Algorithms</span>
-          <span class="pill">Computational Algebra</span>
-          <span class="pill">Stochastic Analysis</span>
+        <div class="card">
+          <h2>Skills</h2>
+          <div>
+            <span class="pill">Python</span><span class="pill">MATLAB</span><span class="pill">TensorFlow</span><span class="pill">PyTorch</span>
+            <span class="pill">FEnics</span><span class="pill">PyCUDA / PyOpenCL</span><span class="pill">ANSYS</span><span class="pill">ABAQUS</span>
+            <span class="pill">Gmsh</span><span class="pill">Simulia</span><span class="pill">AutoCAD</span><span class="pill">SolidWorks</span>
+            <span class="pill">LaTeX</span><span class="pill">GitHub</span><span class="pill">Microsoft Office</span>
+          </div>
+
+          <div class="hr"></div>
+
+          <h2>Honors & Awards</h2>
+          <ul class="list">
+            <li>Lead Teaching Fellow — Center for Teaching and Learning, Columbia University (2025)</li>
+            <li>Finalist — EMI CMC 2025 student paper competition</li>
+            <li>Calatrava Fellowship — Columbia University (2024)</li>
+            <li>INAE Summer Fellowship holder (2018)</li>
+            <li>State Rank 101 — WBJEE 2015</li>
+            <li>Gold medalist — FTRE exam (Physics), Kolkata region (2014)</li>
+          </ul>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- CV -->
+    <section id="cv" class="section">
+      <div class="card">
+        <h2>Curriculum Vitae</h2>
+        <p class="muted">
+          Upload your CV PDF to <code>assets/Gopal_Agarwal_CV.pdf</code>. It will display below.
+        </p>
+
+        <div class="pdf">
+          <iframe
+            title="Gopal Agarwal CV"
+            src="assets/Gopal_Agarwal_CV.pdf"
+            style="width:100%; height:100%; border:0;"
+          ></iframe>
+        </div>
+
+        <p style="margin-top:12px;">
+          <a class="btn" href="assets/Gopal_Agarwal_CV.pdf" target="_blank" rel="noreferrer">Open / Download CV</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="section">
+      <div class="card">
+        <h2>Publications</h2>
+        <ul class="list">
+          <li><b>Crack Propagation in Elastoplastic Thin-Walled Structures using Global-local XFEM Formulation</b> (2025) — G. Agarwal, H. Waisman — Submitted: Journal of Engineering Mechanics</li>
+          <li><b>Global-local XFEM approach for the analysis of cracked thin-walled beams</b> (2025) — G. Agarwal, A. Marzok, H. Waisman — Engineering Fracture Mechanics</li>
+          <li><b>Parameter identification and uncertainty propagation of hydrogel coupled diffusion-deformation using POD-based reduced-order modeling</b> (2024) — G. Agarwal, J.H. Urrea-Quintero, H. Wessels, T. Wick — Computational Mechanics</li>
+          <li><b>Free Vibration Analysis of Functionally Graded Sandwich Conical Shell Using FSDT</b> (2022) — T.D. Singha, A. Das, G. Agarwal, T. Bandyopadhyay, A. Karmakar — ICRACEM 2020 Proceedings</li>
+          <li><b>Compression, tension & lifting stability on a meter gauge flat wagon: An experimental approach</b> (2022) — A. Das, G. Agarwal — Australian Journal of Mechanical Engineering</li>
+          <li><b>Free Vibration Study of Cantilever Conical Shell Made of Functionally Graded Sandwich Material</b> (2020) — T.D. Singha, A. Das, G. Agarwal, T. Bandyopadhyay, A. Karmakar — ICRACEM 2020</li>
+          <li><b>Free Vibration Characteristics of Sandwich Conical Shells With FGM Face Sheets: A Finite Element Approach</b> (2020) — T.D. Singha, A. Das, G. Agarwal, T. Bandyopadhyay — ASME Gas Turbine Conference (2019)</li>
+          <li><b>Optimization of the stress discontinuity value at the interface of a cylindrical stainless steel substrate and electroless Ni-P coating</b> (2019) — R.K. Baranwal, T. Hassan, G. Agarwal, S. Sarkar, G. Majumdar — Materials Research Express</li>
+          <li><b>Time dependent low velocity impact response of turbomachinery blade made of porous exponential FGM</b> (2019) — A. Das, G. Agarwal, K. Inaba, A. Karmakar — Gas Turbine India Conference</li>
+        </ul>
+        <div class="footer muted">If you want, I can format these in APA/IEEE style and add DOI links (if you share your Scholar link).</div>
+      </div>
+    </section>
+
+    <!-- TALKS -->
+    <section id="talks" class="section">
+      <div class="card">
+        <h2>Talks</h2>
+        <p class="muted">
+          Add your invited talks / conference talks here. (Your CV file didn’t list talks explicitly.)
+        </p>
+
+        <ul class="list">
+          <li><b>[Talk Title]</b> — Conference/University, City (Month Year)</li>
+          <li><b>[Talk Title]</b> — Seminar/Workshop, City (Month Year)</li>
+        </ul>
+
+        <div class="footer muted">
+          If you send me your talk titles + dates, I’ll fill this section perfectly.
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="card">
+        <h2>Experience</h2>
+
+        <h3>Continental Reifen Deutschland GmbH, Hannover — Student Researcher</h3>
+        <p class="muted" style="margin:4px 0 0;">Oct 2022 – Sep 2023</p>
+        <p>Developed automatic hexahedral mesh generation for tire tread patterns; integrated into FEM for improved tire footprint simulation.</p>
+
+        <div class="hr"></div>
+
+        <h3>IBNM, Leibniz Universität Hannover — Research Assistant (HiWi)</h3>
+        <p class="muted" style="margin:4px 0 0;">May 2022 – Nov 2023</p>
+        <p>Worked on poroelasticity and reduced-order modeling (POD) of hydrogels using FEnics and Python.</p>
+
+        <div class="hr"></div>
+
+        <h3>Reliance Industries Ltd., Jamnagar — Maintenance Engineer</h3>
+        <p class="muted" style="margin:4px 0 0;">Jul 2019 – Mar 2021</p>
+        <p>Designed maintenance strategies, prepared reports, and optimized costs with improved production.</p>
+
+        <div class="hr"></div>
+
+        <h3>Indian Institute of Science (IISc), Bangalore — Research Intern</h3>
+        <p class="muted" style="margin:4px 0 0;">May 2018 – Jul 2018</p>
+        <p>Worked under Prof. Saptarshi Basu on “Acoustic Characterization of a High Shear Injector.”</p>
+      </div>
+    </section>
+
   </div>
 
-  <div class="grid">
-    <div class="card">
-      <h2 class="section-title">Education</h2>
-      <ul>
-        <li><b>Columbia University (New York, USA)</b> — PhD, Engineering Mechanics (Expected Dec 2026), Advisor: Prof. Haim Waisman, GPA 3.97/4.0</li>
-        <li><b>Columbia University (New York, USA)</b> — M.Phil, Engineering Mechanics (Dec 2025), Advisor: Prof. Haim Waisman, GPA 3.97/4.0</li>
-        <li><b>Leibniz Universität Hannover (Germany)</b> — MSc, Computational Methods in Engineering (Sep 2023), Grade 1.4/5.0</li>
-        <li><b>Jadavpur University (India)</b> — B.E., Mechanical Engineering (Apr 2019), Grade 8.52/10</li>
-      </ul>
+  <script>
+    // Tab switching + deep links (#cv, #publications, ...)
+    const tabs = document.querySelectorAll(".tab");
+    const sections = document.querySelectorAll(".section");
 
-      <hr>
+    function activate(id){
+      sections.forEach(s => s.classList.toggle("active", s.id === id));
+      tabs.forEach(t => t.classList.toggle("active", t.dataset.target === id));
+      if (location.hash.replace("#","") !== id) history.replaceState(null, "", "#" + id);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
 
-      <h2 class="section-title">Experience</h2>
+    tabs.forEach(t => t.addEventListener("click", () => activate(t.dataset.target)));
 
-      <h3 class="item-title">Student Researcher — Continental Reifen Deutschland GmbH (Hannover)</h3>
-      <div class="item-meta">Oct 2022 – Sep 2023</div>
-      <p class="item-desc">
-        Developed automatic hexahedral mesh generation for tire tread patterns and integrated it into an FEM
-        workflow to improve tire footprint simulation.
-      </p>
+    // Buttons that jump to tabs
+    document.querySelectorAll("[data-jump]").forEach(b=>{
+      b.addEventListener("click",(e)=>{
+        e.preventDefault();
+        activate(b.dataset.jump);
+      });
+    });
 
-      <h3 class="item-title">Research Assistant (HiWi) — IBNM, Leibniz Universität Hannover</h3>
-      <div class="item-meta">May 2022 – Nov 2023</div>
-      <p class="item-desc">
-        Worked on poroelasticity and reduced-order modeling (POD) of hydrogels using FEnics and Python.
-      </p>
-
-      <h3 class="item-title">Maintenance Engineer — Reliance Industries Ltd. (Jamnagar, India)</h3>
-      <div class="item-meta">Jul 2019 – Mar 2021</div>
-      <p class="item-desc">
-        Designed maintenance strategies, prepared reports, and optimized costs while improving production performance.
-      </p>
-
-      <h3 class="item-title">Research Intern — Indian Institute of Science (Bangalore, India)</h3>
-      <div class="item-meta">May 2018 – Jul 2018</div>
-      <p class="item-desc">
-        Worked under Prof. Saptarshi Basu on “Acoustic Characterization of a High Shear Injector.”
-      </p>
-    </div>
-
-    <div class="card">
-      <h2 class="section-title">Publications</h2>
-      <ul>
-        <li><b>Crack Propagation in Elastoplastic Thin-Walled Structures using Global-local XFEM Formulation</b> (2025) — G. Agarwal, H. Waisman (Submitted)</li>
-        <li><b>Global-local XFEM approach for the analysis of cracked thin-walled beams</b> (2025) — G. Agarwal, A. Marzok, H. Waisman (Engineering Fracture Mechanics)</li>
-        <li><b>Parameter identification and uncertainty propagation of hydrogel coupled diffusion-deformation using POD-based reduced-order modeling</b> (2024) — G. Agarwal et al. (Computational Mechanics)</li>
-        <li><b>Free Vibration Analysis of Functionally Graded Sandwich Conical Shell Using FSDT</b> (2022)</li>
-        <li><b>Compression, tension &amp; lifting stability on a meter gauge flat wagon: An experimental approach</b> (2022)</li>
-        <li><b>Free Vibration Characteristics of Sandwich Conical Shells With FGM Face Sheets: A Finite Element Approach</b> (2020)</li>
-        <li><b>Optimization of the stress discontinuity value at the interface of a cylindrical stainless steel substrate and electroless Ni-P coating</b> (2019)</li>
-        <li><b>Time dependent low velocity impact response of turbomachinery blade made of porous exponential FGM</b> (2019)</li>
-      </ul>
-
-      <hr>
-
-      <h2 class="section-title">Teaching</h2>
-      <ul>
-        <li>TA, ENMEE3332: A FIRST CRSE / FINITE ELEMENTS — Columbia University (Sept 2025 – Dec 2025)</li>
-        <li>TA, ENMEE3114: Experimental Mechanics of Materials — Columbia University (Jan 2025 – May 2025)</li>
-        <li>TA, ENMEE3105: Mechanics — Columbia University (Sept 2024 – Dec 2024)</li>
-        <li>TA, Mechanics of Solids — Leibniz Universität Hannover (Oct 2022 – Mar 2023)</li>
-      </ul>
-
-      <hr>
-
-      <h2 class="section-title">Skills</h2>
-      <div>
-        <span class="pill">Python</span>
-        <span class="pill">MATLAB</span>
-        <span class="pill">TensorFlow</span>
-        <span class="pill">PyTorch</span>
-        <span class="pill">FEnics</span>
-        <span class="pill">PyCUDA / PyOpenCL</span>
-        <span class="pill">ANSYS</span>
-        <span class="pill">ABAQUS</span>
-        <span class="pill">Gmsh</span>
-        <span class="pill">AutoCAD</span>
-        <span class="pill">SolidWorks</span>
-        <span class="pill">LaTeX</span>
-        <span class="pill">GitHub</span>
-      </div>
-
-      <hr>
-
-      <h2 class="section-title">Honors & Awards</h2>
-      <ul>
-        <li>Lead Teaching Fellow — Center for Teaching and Learning, Columbia University (2025)</li>
-        <li>Finalist — EMI CMC 2025 student paper competition</li>
-        <li>Calatrava Fellowship — Columbia University (2024)</li>
-        <li>INAE Summer Fellowship holder (2018)</li>
-        <li>State Rank 101 — WBJEE 2015</li>
-        <li>Gold medalist — FTRE exam (Physics), Kolkata region (2014)</li>
-      </ul>
-
-      <div class="footer">
-        Tip: If you don’t want your phone or personal Gmail public, remove those lines from the HTML.
-      </div>
-    </div>
-  </div>
-
+    // Load correct tab from URL hash
+    const initial = (location.hash || "#home").replace("#","");
+    const exists = Array.from(sections).some(s => s.id === initial);
+    activate(exists ? initial : "home");
+  </script>
 </body>
 </html>
