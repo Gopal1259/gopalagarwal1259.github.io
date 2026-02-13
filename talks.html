@@ -7,44 +7,78 @@
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-  <div class="nav">
-    <div class="nav-inner">
-      <div class="brand"><div class="dot"></div><b>Gopal Agarwal</b></div>
-      <div class="social">
-  <a href="mailto:ga2664@columbia.edu">
-    <span class="icon">✉️</span> Email
-  </a>
 
-  <a href="https://scholar.google.com/citations?user=9h9ymJYAAAAJ&hl=en&authuser=1" target="_blank" rel="noreferrer">
-    <span class="icon">🎓</span> Google Scholar
-  </a>
-
-  <a href="https://www.researchgate.net/profile/Gopal-Agarwal-5?ev=hdr_xprf" target="_blank" rel="noreferrer">
-    <span class="icon">🔗</span> ResearchGate
-  </a>
-
-  <a href="https://www.linkedin.com/in/gopalagarwal1259/" target="_blank" rel="noreferrer">
-    <span class="icon">💼</span> LinkedIn
-  </a>
-
-  <a href="https://github.com/Gopal1259" target="_blank" rel="noreferrer">
-    <span class="icon">🐙</span> GitHub
-  </a>
-</div>
-
+  <!-- Top navigation (tabs) -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a class="site-title" href="index.html">Gopal Agarwal</a>
+      <nav class="navlinks">
+        <a href="index.html">About</a>
+        <a href="publications.html">Publications</a>
+        <a class="active" href="talks.html">Talks</a>
+        <a href="experiences.html">Experiences</a>
+        <a href="cv.html">CV</a>
+      </nav>
     </div>
   </div>
 
-  <div class="wrap">
-    <div class="card">
-      <h1>Talks</h1>
-      <p class="muted">Add your invited talks, conference presentations, and seminars here.</p>
-      <ul class="list">
-        <li><b>[Talk title]</b> — Conference/University, City (Month Year)</li>
-        <li><b>[Talk title]</b> — Workshop/Seminar, City (Month Year)</li>
-      </ul>
-      <div class="footer muted">Send me your talk titles + dates and I’ll fill this perfectly.</div>
-    </div>
+  <div class="container">
+    <!-- Left sidebar -->
+    <aside class="sidebar">
+      <div class="profile-card">
+        <img class="avatar" src="assets/profile.jpg" alt="Gopal Agarwal" />
+        <p class="name">Gopal Agarwal</p>
+        <p class="affil">Ph.D. Student at Columbia University, New York</p>
+
+        <!-- Contacts (only these, with hyperlinks) -->
+        <div class="social">
+          <a href="mailto:ga2664@columbia.edu">
+            <span class="icon">✉️</span> Email
+          </a>
+
+          <a href="https://scholar.google.com/citations?user=9h9ymJYAAAAJ&hl=en&authuser=1" target="_blank" rel="noreferrer">
+            <span class="icon">🎓</span> Google Scholar
+          </a>
+
+          <a href="https://www.researchgate.net/profile/Gopal-Agarwal-5?ev=hdr_xprf" target="_blank" rel="noreferrer">
+            <span class="icon">🔗</span> ResearchGate
+          </a>
+
+          <a href="https://www.linkedin.com/in/gopalagarwal1259/" target="_blank" rel="noreferrer">
+            <span class="icon">💼</span> LinkedIn
+          </a>
+
+          <a href="https://github.com/Gopal1259" target="_blank" rel="noreferrer">
+            <span class="icon">🐙</span> GitHub
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <div class="section-card">
+        <h1>Talks</h1>
+        <p class="muted">Add your invited talks, conference presentations, and seminars here.</p>
+
+        <div class="item">
+          <p class="item-title">[Talk title]</p>
+          <div class="item-meta">Month Day, Year · Conference/University · City, Country</div>
+          <p class="muted">1–2 lines on what you presented.</p>
+        </div>
+
+        <div class="item">
+          <p class="item-title">[Talk title]</p>
+          <div class="item-meta">Month Day, Year · Workshop/Seminar · City, Country</div>
+          <p class="muted">1–2 lines on what you presented.</p>
+        </div>
+
+        <div class="footer muted">
+          Send me your talk titles + dates (and links to slides/posters if any) and I’ll format this like your friend’s site.
+        </div>
+      </div>
+    </main>
   </div>
+
 </body>
 </html>
