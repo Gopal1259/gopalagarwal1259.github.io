@@ -8,6 +8,7 @@
 </head>
 <body>
 
+  <!-- Top navigation (tabs) -->
   <div class="topbar">
     <div class="topbar-inner">
       <a class="site-title" href="index.html">Gopal Agarwal</a>
@@ -22,48 +23,124 @@
   </div>
 
   <div class="container">
+    <!-- Left sidebar -->
     <aside class="sidebar">
       <div class="profile-card">
         <img class="avatar" src="assets/profile.jpg" alt="Gopal Agarwal" />
         <p class="name">Gopal Agarwal</p>
         <p class="affil">Ph.D. Student at Columbia University, New York</p>
+
+        <!-- Contacts -->
         <div class="social">
           <a href="mailto:ga2664@columbia.edu"><span class="icon">✉️</span> Email</a>
-          <a href="#"><span class="icon">🎓</span> Google Scholar</a>
-          <a href="#"><span class="icon">🔗</span> ResearchGate</a>
-          <a href="#"><span class="icon">💼</span> LinkedIn</a>
-          <a href="#"><span class="icon">🐙</span> GitHub</a>
-          <a href="cv.html"><span class="icon">📄</span> CV</a>
+          <a href="https://scholar.google.com/citations?user=9h9ymJYAAAAJ&hl=en&authuser=1" target="_blank" rel="noreferrer">
+            <span class="icon">🎓</span> Google Scholar
+          </a>
+          <a href="https://www.researchgate.net/profile/Gopal-Agarwal-5?ev=hdr_xprf" target="_blank" rel="noreferrer">
+            <span class="icon">🔗</span> ResearchGate
+          </a>
+          <a href="https://www.linkedin.com/in/gopalagarwal1259/" target="_blank" rel="noreferrer">
+            <span class="icon">💼</span> LinkedIn
+          </a>
+          <a href="https://github.com/Gopal1259" target="_blank" rel="noreferrer">
+            <span class="icon">🐙</span> GitHub
+          </a>
         </div>
       </div>
     </aside>
 
+    <!-- Main content -->
     <main class="main">
       <div class="section-card">
         <h1>Experiences</h1>
 
+        <!-- Columbia -->
         <div class="item">
-          <p class="item-title">Continental Reifen Deutschland GmbH — Student Researcher</p>
-          <div class="item-meta">Oct 2022 – Sep 2023 · Hannover, Germany</div>
-          <p class="muted">Automatic hexahedral mesh generation for tire tread patterns; integrated into FEM for footprint simulation.</p>
+          <p class="item-title">Columbia University, New York — Graduate Researcher (PhD)</p>
+          <div class="item-meta">Jan 2024 – Present</div>
+          <ul class="list">
+            <li>Worked on XFEM and developed a global-local framework to efficiently solve crack propagation for fracture mechanics (paper submitted in <i>Engineering Fracture Mechanics</i>).</li>
+            <li>Developing an XFEM/GFEM + POD framework for elasto-plasticity and developing enrichment functions for beam plastic behavior.</li>
+          </ul>
         </div>
 
+        <hr />
+
+        <!-- Continental -->
         <div class="item">
-          <p class="item-title">Leibniz Universität Hannover (IBNM) — Research Assistant (HiWi)</p>
-          <div class="item-meta">May 2022 – Nov 2023 · Hannover, Germany</div>
-          <p class="muted">Poroelasticity + POD reduced-order modeling for hydrogels using FEniCS/Python.</p>
+          <p class="item-title">Continental Reifen Deutschland GmbH, Hannover — Student Researcher</p>
+          <div class="item-meta">Oct 2022 – Sep 2023</div>
+          <ul class="list">
+            <li>Worked in RDBT/VD-CVT/TTM division under the supervision of Dr.-Ing. Andre Lutz; completed Master’s thesis and internship on truck tire mechanics.</li>
+            <li>Developed a framework for automatic hexahedral mesh generation for tire tread patterns and improved contact pressure distribution for tire footprint simulation by integrating with the FEM workflow.</li>
+          </ul>
         </div>
 
+        <hr />
+
+        <!-- IBNM -->
         <div class="item">
-          <p class="item-title">Reliance Industries Ltd. — Maintenance Engineer</p>
-          <div class="item-meta">Jul 2019 – Mar 2021 · Jamnagar, India</div>
-          <p class="muted">Maintenance strategies, reporting, cost optimization, improved production performance.</p>
+          <p class="item-title">IBNM, Leibniz Universität Hannover — HiWi / Research Assistant</p>
+          <div class="item-meta">May 2022 – Nov 2023</div>
+          <ul class="list">
+            <li>Worked on poroelasticity and ROM-based POD analysis of hydrogels using FEniCS and Python (paper published in <i>Journal of Computational Mechanics</i>).</li>
+          </ul>
         </div>
 
+        <hr />
+
+        <!-- IRZ -->
         <div class="item">
-          <p class="item-title">Indian Institute of Science (IISc) — Research Intern</p>
-          <div class="item-meta">May 2018 – Jul 2018 · Bangalore, India</div>
-          <p class="muted">Acoustic characterization of a high shear injector (Prof. Saptarshi Basu).</p>
+          <p class="item-title">IRZ, Leibniz Universität Hannover — HiWi / Research Assistant</p>
+          <div class="item-meta">Dec 2021 – Feb 2022</div>
+          <ul class="list">
+            <li>Worked on uncertainty quantification; developed algorithms and a library for reliability and risk analysis using the open-source software Julia.</li>
+          </ul>
+        </div>
+
+        <hr />
+
+        <!-- Reliance -->
+        <div class="item">
+          <p class="item-title">Reliance Industries Ltd., Jamnagar, India — Maintenance Engineer</p>
+          <div class="item-meta">Jul 2019 – Mar 2021</div>
+          <ul class="list">
+            <li>Established maintenance strategy within a team to improve productivity and minimize maintenance shutdown.</li>
+            <li>Prepared data and reports for regular maintenance and spares planning; analyzed data for maintenance cost optimization with improved productivity.</li>
+          </ul>
+        </div>
+
+        <hr />
+
+        <!-- IISc -->
+        <div class="item">
+          <p class="item-title">IISc, Bangalore, India — Research Intern</p>
+          <div class="item-meta">May 2018 – Jul 2018</div>
+          <ul class="list">
+            <li>Worked under Prof. Saptarshi Basu on “Acoustic Characterization of a High Shear Injector.”</li>
+          </ul>
+        </div>
+
+        <hr />
+
+        <!-- TATA -->
+        <div class="item">
+          <p class="item-title">TATA Steel, Kalinganagar, India — Intern</p>
+          <div class="item-meta">Dec 2017 – Jan 2018</div>
+          <ul class="list">
+            <li>Worked on “Review of Energy Source Identification and study on hydraulic systems.”</li>
+          </ul>
+        </div>
+
+        <hr />
+
+        <!-- ICMPL -->
+        <div class="item">
+          <p class="item-title">ICMPL, Sipcot Industrial Park, Chennai — Intern</p>
+          <div class="item-meta">May 2016 – Jun 2016</div>
+          <ul class="list">
+            <li>Familiarization with plant operations and departments; management overview of the production process.</li>
+          </ul>
         </div>
 
       </div>
