@@ -3,105 +3,92 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gopal Agarwal | Home</title>
+  <title>Gopal Agarwal</title>
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-  <div class="nav">
-    <div class="nav-inner">
-      <div class="brand"><div class="dot"></div><b>Gopal Agarwal</b></div>
-      <div class="tabs">
-        <a class="tab active" href="index.html">Home</a>
-        <a class="tab" href="cv.html">CV</a>
-        <a class="tab" href="publications.html">Publications</a>
-        <a class="tab" href="talks.html">Talks</a>
-        <a class="tab" href="experience.html">Experience</a>
-      </div>
+
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a class="site-title" href="index.html">Gopal Agarwal</a>
+      <nav class="navlinks">
+        <a class="active" href="index.html">About</a>
+        <a href="publications.html">Publications</a>
+        <a href="talks.html">Talks</a>
+        <a href="experiences.html">Experiences</a>
+        <a href="cv.html">CV</a>
+      </nav>
     </div>
   </div>
 
-  <div class="wrap">
-    <div class="grid">
-      <div class="card">
-        <div class="row">
-          <img class="photo" src="assets/profile.jpg" alt="Gopal Agarwal" />
-          <div style="flex:1; min-width:260px;">
-            <h1>Gopal Agarwal</h1>
-            <div class="muted">PhD Student in Engineering Mechanics — Columbia University (Expected Dec 2026)</div>
-            <p>
-              I work in computational mechanics and fracture mechanics with a focus on
-              topology optimization, finite element analysis, and machine learning-driven modeling.
-            </p>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="profile-card">
+        <img class="avatar" src="assets/profile.jpg" alt="Gopal Agarwal" />
+        <p class="name">Gopal Agarwal</p>
+        <p class="affil">Ph.D. Student at Columbia University, New York</p>
 
-            <p class="muted">
-              <b>Contact:</b>
-              <a href="mailto:ga2664@columbia.edu">ga2664@columbia.edu</a> ·
-              <a href="mailto:gopalagarwal1259@gmail.com">gopalagarwal1259@gmail.com</a> ·
-              +1 (917) 609-1483
-              <br/>
-              <b>Links:</b>
-              <!-- Replace # with your URLs -->
-              <a href="#" target="_blank" rel="noreferrer">LinkedIn</a> ·
-              <a href="#" target="_blank" rel="noreferrer">Google Scholar</a> ·
-              <a href="#" target="_blank" rel="noreferrer">ResearchGate</a>
-            </p>
-
-            <div style="display:flex; gap:10px; flex-wrap:wrap;">
-              <a class="btn" href="cv.html">View CV</a>
-              <a class="btn" href="publications.html">Publications</a>
-            </div>
-          </div>
+        <div class="social">
+          <!-- Replace # links with yours -->
+          <a href="mailto:ga2664@columbia.edu">
+            <span class="icon">✉️</span> Email
+          </a>
+          <a href="#" target="_blank" rel="noreferrer">
+            <span class="icon">🎓</span> Google Scholar
+          </a>
+          <a href="#" target="_blank" rel="noreferrer">
+            <span class="icon">🔗</span> ResearchGate
+          </a>
+          <a href="#" target="_blank" rel="noreferrer">
+            <span class="icon">💼</span> LinkedIn
+          </a>
+          <a href="#" target="_blank" rel="noreferrer">
+            <span class="icon">🐙</span> GitHub
+          </a>
+          <a href="cv.html">
+            <span class="icon">📄</span> CV
+          </a>
         </div>
+      </div>
+    </aside>
 
-        <div class="hr"></div>
+    <main class="main">
+      <div class="section-card">
+        <h1>About</h1>
+        <p>
+          Hello! I am a Ph.D. student in Engineering Mechanics at Columbia University
+          (expected Dec 2026), advised by Prof. Haim Waisman.
+        </p>
+        <p>
+          My research interests include computational mechanics and fracture mechanics,
+          with a focus on XFEM, finite element analysis, and topology optimization.
+        </p>
 
-        <h2>Research Interests</h2>
-        <div>
-          <span class="pill">Topology Optimization</span>
-          <span class="pill">Finite Element Analysis</span>
-          <span class="pill">Machine Learning</span>
-          <span class="pill">Algorithms</span>
-          <span class="pill">Computational Algebra</span>
-          <span class="pill">Stochastic Analysis</span>
+        <h2>Interests</h2>
+        <div class="badges">
+          <span class="badge">Fracture Mechanics</span>
+          <span class="badge">XFEM</span>
+          <span class="badge">Finite Element Analysis</span>
+          <span class="badge">Topology Optimization</span>
+          <span class="badge">Machine Learning</span>
         </div>
-
-        <div class="hr"></div>
 
         <h2>Education</h2>
-        <ul class="list">
-          <li><b>Columbia University</b> — PhD, Engineering Mechanics (Expected Dec 2026) · Advisor: Prof. Haim Waisman · GPA 3.97/4.0</li>
-          <li><b>Columbia University</b> — M.Phil, Engineering Mechanics (Dec 2025) · Advisor: Prof. Haim Waisman · GPA 3.97/4.0</li>
-          <li><b>Leibniz Universität Hannover</b> — MSc, Computational Methods in Engineering (Sep 2023) · Grade 1.4/5.0</li>
-          <li><b>Jadavpur University</b> — B.E., Mechanical Engineering (Apr 2019) · Grade 8.52/10</li>
-        </ul>
-
-        <div class="footer">
-          Tip: If you don’t want your phone/personal email public, remove them here.
+        <div class="item">
+          <p class="item-title">Columbia University — PhD, Engineering Mechanics</p>
+          <div class="item-meta">Expected Dec 2026 · GPA 3.97/4.0</div>
+        </div>
+        <div class="item">
+          <p class="item-title">Leibniz Universität Hannover — MSc, Computational Methods in Engineering</p>
+          <div class="item-meta">Sep 2023</div>
+        </div>
+        <div class="item">
+          <p class="item-title">Jadavpur University — B.E., Mechanical Engineering</p>
+          <div class="item-meta">Apr 2019</div>
         </div>
       </div>
-
-      <div class="card">
-        <h2>Skills</h2>
-        <div>
-          <span class="pill">Python</span><span class="pill">MATLAB</span><span class="pill">TensorFlow</span><span class="pill">PyTorch</span>
-          <span class="pill">FEnics</span><span class="pill">PyCUDA / PyOpenCL</span><span class="pill">ANSYS</span><span class="pill">ABAQUS</span>
-          <span class="pill">Gmsh</span><span class="pill">AutoCAD</span><span class="pill">SolidWorks</span>
-          <span class="pill">LaTeX</span><span class="pill">GitHub</span>
-        </div>
-
-        <div class="hr"></div>
-
-        <h2>Honors & Awards</h2>
-        <ul class="list">
-          <li>Lead Teaching Fellow — Center for Teaching and Learning, Columbia University (2025)</li>
-          <li>Finalist — EMI CMC 2025 student paper competition</li>
-          <li>Calatrava Fellowship — Columbia University (2024)</li>
-          <li>INAE Summer Fellowship holder (2018)</li>
-          <li>State Rank 101 — WBJEE 2015</li>
-          <li>Gold medalist — FTRE exam (Physics), Kolkata region (2014)</li>
-        </ul>
-      </div>
-    </div>
+    </main>
   </div>
+
 </body>
 </html>
