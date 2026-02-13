@@ -88,16 +88,15 @@ body{
   box-shadow: var(--shadow);
 }
 .avatar{
-  width: 270px;          /* you can change size */
-  height: auto;          /* keeps full image proportions */
-  border-radius: 14px;   /* rectangular with soft corners */
-  object-fit: contain;   /* shows the full photo (no crop) */
-  display: block;
-  margin: 0 auto 14px;
-  border: 1px solid var(--border);
-  background: #fff;      /* nice background behind photo */
-  padding: 6px;          /* small frame padding */
+  width: 270px !important;
+  height: auto !important;
+  border-radius: 14px !important;
+  object-fit: contain !important;
+  border: 1px solid var(--border) !important;
+  background: #fff !important;
+  padding: 6px !important;
 }
+
 
 .name{
   font-size: 22px;
