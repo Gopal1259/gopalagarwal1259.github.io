@@ -169,7 +169,9 @@ hr{
   border-radius: 999px;
   font-size: 13px;
   color: var(--muted);
+  background: #fafafa;
 }
+
 
 .item{
   margin: 18px 0;
