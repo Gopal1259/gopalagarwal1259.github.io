@@ -164,27 +164,38 @@ hr{
   margin-top: 8px;
 }
 .badge{
-  padding: 6px 10px;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
   border: 1px solid var(--border);
   border-radius: 999px;
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 1.2;
   color: var(--muted);
   background: #fafafa;
+  white-space: nowrap;
 }
 
 
 .item{
-  margin: 18px 0;
+  margin: 22px 0;
 }
+
 .item-title{
   font-size: 18px;
   font-weight: 700;
-  margin: 0;
+  margin: 0 0 7px;
+  line-height: 1.35;
 }
+
 .item-meta{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 8px;
   color: var(--muted);
   font-size: 14px;
-  margin-top: 2px;
+  margin-top: 4px;
+  max-width: 900px;
 }
 
 /* --- CV iframe --- */
